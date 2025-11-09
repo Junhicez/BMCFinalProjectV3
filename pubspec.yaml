@@ -38,6 +38,7 @@ dependencies:
   provider: ^6.1.5+1
   cloud_firestore: ^6.1.0
   intl: ^0.20.2
+  google_fonts: ^6.3.2
 
 dev_dependencies:
   flutter_test:
@@ -63,13 +64,12 @@ flutter:
   assets:
     - assets/images/
 
-# 👇 moved outside of `flutter:` but kept your comments intact
 flutter_native_splash:
   color: "#FFFFFF"
-  image: assets/images/splash_logo.png
+  image: assets/images/app_logo.png
   android_12:
     color: "#FFFFFF"
-    image: assets/images/splash_logo.png
+    image: assets/images/app_logo.png
   web: true
 
   # To add assets to your application, add an assets section, like this:

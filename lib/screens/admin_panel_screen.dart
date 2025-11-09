@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecommerce_app/screens/admin_order_screen.dart';
+// 1. ADD THIS IMPORT
+import 'package:ecommerce_app/screens/admin_chat_list_screen.dart';
 
 class AdminPanelScreen extends StatefulWidget {
   const AdminPanelScreen({super.key});
@@ -106,7 +108,7 @@ class _AdminPanelScreenState extends State<AdminPanelScreen> {
                 icon: const Icon(Icons.list_alt),
                 label: const Text('Manage All Orders'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Colors.teal,
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   textStyle: const TextStyle(fontSize: 16),
                 ),
@@ -118,6 +120,24 @@ class _AdminPanelScreenState extends State<AdminPanelScreen> {
                   );
                 },
               ),
+
+              // 3. --- ADD THIS NEW BUTTON ---
+              const SizedBox(height: 10),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.chat_bubble_outline),
+                label: const Text('View User Chats'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.purple[700],
+                ),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const AdminChatListScreen(),
+                    ),
+                  );
+                },
+              ),
+              // --- END OF NEW BUTTON ---
 
               // 5. A divider to separate it
               const Divider(height: 30, thickness: 1),
